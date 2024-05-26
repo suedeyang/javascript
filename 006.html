@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        function changetitle() {
+            var newTitle=document.getElementById("title").value;
+            document.title = newTitle;
+        }
+    </script>
+</head>
+<body>
+
+    <p>
+        <input type="text" id="title" value="Hello, world!">
+        <input type="button" value="更改標題" onclick="changetitle()">
+    </p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<script>
+    var willClose=true;
+    function clickBody() {
+        willClose=false;
+    }
+    setInterval(function(){
+        if(willClose){ 
+            window.close();
+        }else{
+            willClose=true;}
+        }, 10000);
+</script>
+</head>
+<body   onclick="clickBody()">
+    //10秒後關閉視窗 
+</body>
+</html>
