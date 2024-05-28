@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>將網站設為首頁</title>
+    <script>
+        //window.location.href = '/';
+        //document.write(document.all);
+        //document.write(window.sidebar);
+
+        function setMyHomePage(){
+            //判斷是否為IE瀏覽器
+            if(document.all){ 
+                //設定body的行為 為瀏覽器的首頁 
+                document.body.style.behavior = 'url(#default#homepage)';
+                //設定瀏覽器首頁
+                document.body.setHomePage('https://www.lhps.kh.edu.tw');
+            }else if(window.sidebar){
+                //透過firefox特有的元件設定首頁地址
+                var thePrefs=Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                thePrefs.setCharPref('browser.startup.homepage', 'https://www.lhps.kh.edu.tw');
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="setMyHomePage()">設為首頁</a>
+</body>
+</html>

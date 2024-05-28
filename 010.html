@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Frame</title>
+    <script>
+        
+        function loadJS(){
+            //獲得html頁首的DOM
+            var theHead = document.getElementsByTagName('head').item(0);
+
+            //建立指令稿的dom物件
+            var myScript = document.createElement('script'); 
+            myScript.src = './myjs.js()'; //指定指令稿路徑(需在html同個目錄下建立myjs.js)
+            myScript.type = 'text/javascript'; //指令稿類型
+            myScript.defer = true;//程式下載完才執行
+            theHead.appendChild(myScript);
+        }
+
+       
+    </script>        
+</head>
+<body>
+    <input type="button" value="載入JS" onclick="loadJS()"/ >
+    
+</body>
+</html>

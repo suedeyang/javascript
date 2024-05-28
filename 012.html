@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Frame</title>
+    <script>
+        document.write(window.external);
+        function addFavorite() {
+            //window.external.AddFavorite('./011.html', '首頁');
+            window.sidebar.addPanel('首頁', 'https://www.google.com.tw', '');
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="加入我的最愛" onclick="addFavorite()">
+</body>
+</html>
