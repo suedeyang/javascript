@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 視窗開啟時顯示大廣告圖及其自動關閉 -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>視窗開啟時顯示大廣告圖及其自動關閉</title>
+    <script>
+        //展示廣告圖片 https://www.lhps.kh.edu.tw/upload/180/104_54885/promote-magazine.png
+        function shoeAdPic() {
+            //建立ad變數 指定到id
+            var ad=document.getElementById("ad");
+            
+            //在ad變數新增一條html程式碼
+            ad.innerHTML = '<img src="https://www.lhps.kh.edu.tw/upload/180/104_54885/promote-magazine.png" width="100%" height="200px" />';
+            
+            setTimeout(function(){
+                var ad=document.getElementById("ad");
+                ad.style.display="none"; //關閉ad //重要的是這裡
+            }, 5000); //延遲5秒後關閉ad
+        };
+        window.onload = shoeAdPic;
+    </script>
+</head>
+<body style="text-align: center;">
+    <p>網頁內容上半部</p>
+    <p id="ad"></p>
+    <p>網頁內容下半部</p>
+</body>
+</html>
+

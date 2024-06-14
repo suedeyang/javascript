@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>避免瀏覽器載入快取</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        /**
+         * The callback function that is called when the window loads.
+         * It adds a timestamp query parameter to all the href attributes
+         * of <a> tags to prevent the browser from loading the page from
+         * the cache.
+         */
+        function myOnload() {
+            // Get all the <a> tags
+            var links = document.getElementsByTagName('a');
+            
+            // Iterate over each <a> tag
+            for(var i=0; i<links.length; i++){
+                var link = links[i];
+                var href = link.href; // Get the href attribute of the <a> tag
+
+                // If the href attribute already contains a query parameter,
+                // add a new query parameter with the current timestamp.
+                // Otherwise, add a new query parameter as the first one.
+                if(href.indexOf('?') > -1){
+                    href += '&time' + new Date().getTime();
+                }else{
+                    href += '?time' + new Date().getTime();
+                }
+                
+                // Update the href attribute with the new query parameter
+                link.href = href;
+            }
+        } // End of myOnload function
+
+        window.onload = myOnload;
+    </script>
+</head>
+<body style="text-align: center;">
+    <p>
+        <a href="a.html">連結1</a>
+        <a href="b.html">連結2</a>
+    </p>
+</body>
+</html>

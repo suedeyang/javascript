@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- 附帶關閉按鈕的右下角圖片廣告 -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>附帶關閉按鈕的右下角圖片廣告</title>
+    <script>
+    //定位層結構
+    function posRightCorner() {
+        //var ad = document.getElementById("ad");
+        //scrollLeft https://www.runoob.com/try/try.php?filename=tryjsref_element_scrollleft2
+
+        ad.style.top = document.body.scrollTop + document.body.clientHeight-120;
+        ad.style.left = document.body.scrollLeft + document.body.clientWidth-180;
+        setTimeout("posRightCorner()", 100);
+    }
+
+    function closeAD() {
+        //var ad = document.getElementById("ad");
+        ad.style.display = "none";
+    }
+
+    window.onload = function(){
+        var ad = document.getElementById("ad");
+        posRightCorner();
+    }
+
+    </script>
+</head>
+
+<body style="margin: 0px;text-align: center;">
+<!-- 定義畫面右下角廣告框的div -->
+<div style="border: 1px solid black;z-index: 9999;width: 180px; position: absolute;height: 116px;background-color: rbg(201,211,243);" id="ad">
+    <table width="100%" cellpadding="0" border="0" bgcolor="#cfdef4">
+        <tbody>
+            <tr>
+                <td width="90%" valign="middle" height="24"></td>
+                <td width="" valign="middle" align="right">
+                    <a title="關閉" onclick="closeAD()" style="cursor: pointer;">X</a>
+                </td>
+            </tr>
+            <tr>
+                <td height="90" colspan="3">
+                    Hello World
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

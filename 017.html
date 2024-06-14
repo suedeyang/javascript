@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>透過id取得一個特定的DOM元素</title>
+    <script>
+        function getDomText() {
+            var mylink=document.getElementById("mylink");
+            var mySpan=document.getElementById("mySpan");
+            var str="";
+            str+=mylink.innerHTML;
+            str+=" ";
+            str+=mySpan.innerHTML;
+            alert("兩個DOM的內容為:\n" + str);
+        }
+        //window.onload = myOnload;
+    </script>
+</head>
+<body style="text-align: center;">
+    <p>
+    <a href="#" id="mylink">連結</a>
+    <span id="mySpan" style="display: none;">文字</span>
+    <br>
+    <input type="button" value="取得" onclick="getDomText()" />
+    </p>
+</body>
+</html>
