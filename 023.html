@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>刪除元素 與style.display="none"效果相同</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function deleteElement() {
+            var del = document.getElementById("del");
+            del.parentNode.removeChild(del);
+            //del.parentNode.removeChild(del);
+            //與style.display="none"效果相同
+            //removeChild函數是對子元素進行刪除 而非本身刪除 所以要先取得父元素 再刪除目標元素
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <p>
+        <input type="button" value="刪除元素" onclick="deleteElement()" />
+    </p>
+    <span id="del">即將被刪除的DOM</span>
+</body>
+
+</html>

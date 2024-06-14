@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>檢查文件樹(失敗)</title>
+    <script>
+        function getDomTree() {
+            alert(text(document.body));  //彈出視窗顯示樹的內容
+        }
+        function text(elem) {
+            var t=""; //定義文字字串
+            var elemelem=elem.childNodes; //取的節點的所有子節點
+
+            //檢查所有節點
+            for(var i=0;i<elemelem.length;i++){ //
+                var e= elemelem[i];
+                if(e.parentNode==elem && e.nodetype==1){ //文字、注釋節點不被檢查 並判斷是否為直接父節點
+                    t += elemelem[i].tagName + "  "; //標籤名稱加到字串中
+                    //循環子節點
+                    if(e.childNodes.length>0){ 
+                    //如果子節點只有一個文字子節點，跳過
+                        if(e.childNodes.length==1){
+                            var fe =e.childNodes[0];
+                            if(fe.nodetype==3){ //是否為文字子節點
+                                continue; //跳過
+                            }
+                        t += '\n\t'; //子節點分隔符號
+                        t += text(e); //遞迴其他子元素的子節點
+                        }   
+                    }
+                }
+                return t;
+            }
+        }
+    </script>   
+</head>
+<body style="text-align: center;">
+    <p>
+        <a id="myLink" href="#">連結</a>
+        <br/>
+        <input type="button" value="檢查文件樹" onclick="getDomTree()" ; />
+    </p>
+    
+</body>
+</html>

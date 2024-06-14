@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>根據name取得網頁中的全部河取按鈕</title>
+    <script>
+        function getDomsByName() {
+            var doms=document.getElementsByName("myName");
+            str="";
+            for(var i=0;i<doms.length;i++){
+                str+=doms[i].tagName;
+                //str+=doms[i].href;
+                //str+=doms[i].innertext;
+                //str+=doms[i].textContent;
+                str+=" , ";
+            }
+            alert("DOM的NAME內容為:\n" + str);
+        }
+    </script>
+</head>
+<body>
+    <p>
+       <a name="myName" href="https://www.google.com.tw/">Google</a>
+       <span name="myName">文字</span>
+       <br/>
+       <input type="button" value="按鈕" onclick="getDomsByName()" ; />
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>根據標籤名稱取得網頁中的多個元素</title>
+    <script>
+        function getDomsByTag() {
+            var doms=document.getElementsByTagName("span");
+            str="";
+            for(var i=0;i<doms.length;i++){
+                str+=doms[i].innerHTML;
+                //str+=doms[i].textContent;
+                //str+=doms[i].href;
+                //str+=doms[i].innertext;
+                //str+=doms[i].textContent;
+                str+=" , ";
+            }
+            alert("DOM的TAG內容為:\n" + str);
+        }
+    </script>
+</head>
+<body style="text-align: center;">
+    <p>
+       <span>元素1</span>
+       <span>元素2</span>
+       <br/>
+       <input type="button" value="取得" onclick="getDomsByTag()" ; />
+</html>

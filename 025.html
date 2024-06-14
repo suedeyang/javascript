@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>取代元素內容</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function replaceContent() {
+            var myDom = document.getElementById("myDom");
+            myDom.innerHTML = '<span>一句話</span>&nbsp; <a href="https://www.lhps.kh.edu.tw">一個連結</a>';
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <p>
+        <input type="button" value="取代內容" onclick="replaceContent()" />
+    </p>
+    <p id="myDom">
+        <a href="#">一個連結</a>&nbsp;<span>一句話</span>
+    </p>
+    </body>
+
+</html>
