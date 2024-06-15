@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>改變文件屬性(圖片的寬度為例)</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function modifyWH() {
+            var mypic = document.getElementById("mypic");
+            mypic.width = 200; //修改圖片的寬度的方式要注意
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <p>
+        <input type="button" value="修改圖片的寬度" onclick="modifyWH()" />
+    </p>
+    <p>
+        <!--id一定要寫在img標籤中 寫在p標籤中無效-->>
+        <img id="mypic" src="https://www.lhps.kh.edu.tw/upload/180/104_54885/promote-magazine.png" width="100px" height="200px">
+    </p>
+</body>
+
+</html>

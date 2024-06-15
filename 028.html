@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>複製元素</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function cloneImg() {
+            var myImg =  document.getElementById("myImg");
+            var newImg = myImg.cloneNode(true);
+            //cloneNote的第二個參數true表示要複製所以子元素 false則複製元素但不複製子節點 通常都用true
+            document.getElementById("myContent").appendChild(newImg);
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <p id="myContent">
+        <input type="button" value="複製圖片" onclick="cloneImg()" />        
+        <img id="myImg" src="https://www.lhps.kh.edu.tw/upload/180/104_54885/promote-magazine.png">
+    </p>
+</body>
+
+</html>
