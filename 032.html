@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>檢查表單所有的控制項</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function getValues() {
+            var f=document.forms[0]; //取得表單dom 這種定義法新的方法
+            var elements=f.elements;
+            var str='';
+            for(var i =0;i<elements.length;i++){
+                var e=elements[i]; //取得form內每一個控制
+                str += e.value; //取得控制項的值
+                str += " \n ";
+            }
+            alert(str);
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+   <form>
+    文字標籤：<input type="text" name="myText" />
+    <br/>
+    單選按鈕：<input type="radio" name="myRadio" value="1"  />1
+    
+    <br/>
+    下拉選單：
+    <select name="mySelect">
+        <option value="">==請選擇==</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <br/>
+    <input type="button" value="檢查表單所有的控制項" onclick="getValues()"/>
+   </form>
+</body>
+</html>

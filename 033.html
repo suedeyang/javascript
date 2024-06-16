@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>透過控制項名稱存取特定的控制項</title>
+
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        //表單下的控制項常常都有一個屬性name 它的作用是在表單傳送時，作為http參數來進行傳遞
+        //因此 這個name也可以作為控制項的key來使用
+        function getFormDom() {
+            var f=document.forms[0]; //取得表單dom
+            var myText=f.myText; //不用特別定義用name來取得控制項
+            alert(myText.name+":"+myText.value);        
+        }   
+    </script>
+</head>
+
+<body style="text-align: center;">
+
+   <form>
+    文字標籤：<input type="text" name="myText">
+    <br>
+    <input type="button" value="取得控制項" onclick="getFormDom()">
+   </form>
+</body>
+
+</html>

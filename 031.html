@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>刪除所有的子元素</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function deleteChilds() {
+            var ul = document.getElementsByTagName("ul")[0];
+            if (ul.hasChildNodes()) {
+                var len = ul.childNodes.length;
+                for (var i = 0; i < len; i++) {
+                    ul.removeChild(ul.childNodes[0]);
+                }
+            }
+        }   
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+    <br />
+    <input type="button" value="刪除所有子元素" onclick="deleteChilds()">
+</body>
+
+</html>

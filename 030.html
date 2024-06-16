@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>顯示或隱藏元素</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function showOrHide() {
+            var myImg = document.getElementById("myImg");
+            var display=myImg.style.display;
+            if(display!="none"){
+                myImg.style.display="none";
+            }else{
+                myImg.style.display=""; //不等於none則顯示
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <p id="myContent">
+        <input type="button" value="顯示隱藏元素" onclick="showOrHide()" />
+        <img id="myImg" src="https://www.lhps.kh.edu.tw/upload/180/104_54885/promote-magazine.png">
+    </p>
+</body>
+
+</html>
