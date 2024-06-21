@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>動態選擇聚焦的控制項</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function focusIt() {
+            var f=document.forms[0];
+            var myRadio=f.myRadio;
+            //myRadio[0].focus();
+            f.myText.focus();
+        }
+
+        //按鈕後 在按空白鍵 radio按鈕就會被focus()
+        window.onload = focusIt;
+    </script>
+</head>
+<body style="text-align: center;">
+    <form>
+        文字框:<input type="text" name="myText"><br/>
+        單選按鈕:<input type="radio" value="1" name="myRadio"/>1
+                <input type="radio" value="2" name="myRadio"/>2<br />
+        下拉選單<select name="mySelect">
+                <option value="">==請選取==</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select><br/>
+        <input type="button" value="第一個單選按鈕為焦點" onclick="focusIt()">
+
+    </form>
+</body>
+</html>

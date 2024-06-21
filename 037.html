@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>動態指定表單的動作屬性</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function modifyAction() {
+            var f=document.forms[0];
+            var newURL=f.newURL.value;
+            f.action=newURL;  //修改表單的action地址 
+            alert("表單目前的動作:"+f.action);
+        }
+        //表單的動作屬性是action 它記錄了表單的傳送地址 這個地址可以是絕對位置也可以是相對位址
+        //這個例子就是相對位址  會出現表單目前的動作:http://127.0.0.1:5500/12344556
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <form method="post">
+        請選擇傳送方法:
+        <input type="text" name="newURL"/><br/>
+        <input type="button" value="修改傳送action" onclick="modifyAction()"/>
+    </form>
+</body>
+</html>

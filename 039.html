@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>初始化表單裡的所有控制項的值到最初狀態(reset表單)</title>
+    <script type="text/javascript">
+        function reset() {
+            //document.getElementById("myForm").reset();
+            var f=document.forms["myForm"];
+            f.reset();
+        }
+    </script>
+</head>
+<body>
+
+    <form id="myForm">
+        文字標籤:<input type="text" name="myText"><br>
+        單選標籤:<input type="radio" value="1" name="myRadio"/>1
+                <input type="radio" value="2" name="myRadio"/>2<br>
+        下拉選單<select name="mySelect">
+                <option value="">==請選取==</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select><br/>
+        <input type="button" value="重置表單" onclick="reset()" />
+    </form>
+</body>
+</html>
