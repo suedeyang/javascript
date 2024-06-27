@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>設定下拉功能表的值</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <script type="text/javascript">
+        function selectYear() {
+            setTimeout(function() {
+               var y = new Date().getYear()+1900; //取得當前年份 注意 +1900
+               var y2=new Date().getFullYear();
+               alert(y2);
+               document.forms[0].mySelect.value = y2; 
+            },1) //1秒後執行 延遲設置是因為某些瀏覽器直接設定值可能會出現錯誤
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <form>
+        下拉選單<select name="mySelect">
+            <option value="">==請選取==</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select><br />
+        <input type="button" value="選擇當年" onclick="selectYear()">
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>選取全部核取按鈕</title>
+    <script type="text/javascript">
+        
+        function checkAll(c) {
+            var arr =document.getElementsByName("myname");
+            if(c){
+                for(var i=0;i<arr.length;i++){
+                    arr[i].checked=true; //將全部核取 checked的屬性為true
+                }
+            }else{
+                for(var i=0;i<arr.length;i++){
+                    arr[i].checked=false; //將全部取消 checked的屬性為false
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <form>
+        你的興趣:<br/>
+        <input type="checkbox" name="myall" onclick="checkAll(this.checked)" />
+        全選<br/><br />
+        <input type="checkbox" name="myname">全選 &nbsp;
+        <input type="checkbox" name="myname">全選 &nbsp;
+        <input type="checkbox" name="myname">全選
+    </form>
+</body>
+
+</html>

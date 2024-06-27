@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>批次為所有的表單控制項加一個說明</title>
+    <script type="text/javascript">
+        function batchComment() {
+            var f=document.forms[0];
+            var children=f.childNodes;
+            var newArr=[];
+            var j=0;
+
+            for(var i=0;i<children.length;i++){
+                var e=children[i];
+                newArr[j++]=e; //先把子節點按順序複製到新陣列 
+
+                if(e.tagName=="INPUT" || e.tagName=="SELECT"){
+                    var text = document.createTextNode("此項必填"); //新增一個文字節點
+                    newArr[j++]=text; //再將文字節點複製到新陣列 按順序
+                }
+        }
+        f.innerHTML=''; //先清空
+        for(var i=0;i<newArr.length;i++){
+            f.appendChild(newArr[i]); //再放回去
+        }
+        }
+        function fresh() {
+                window.location.reload();
+            }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <form id="myForm">
+        文字標籤:<input type="text" name="myText"/><br>
+        單選標籤:<input type="radio" value="1" name="myRadio" />1
+        <input type="radio" value="2" name="myRadio" />2<br>
+        下拉選單<select name="mySelect">
+            <option value="">==請選取==</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select><br />
+        <input type="button" value="批次說明" onclick="batchComment()" />
+        <input type="button" value="RESET" onclick="fresh()" >
+    </form>
+</body>
+
+</html>
