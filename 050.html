@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>確保網頁只能被框架載</title>
+    <script type="text/javascript">
+        function init() {
+            if(window.top == window.self) {
+                alert("網頁只能被框架載入");
+                document.body.innerHTML = "<h2>網頁只能被框架載入</h2>";
+                window.close();
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    網頁內容...
+</body>
+
+</html>
