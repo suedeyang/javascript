@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>透過子視窗資料登錄</title>
+    <script type="text/javascript">
+        function passValue() {
+            var val=document.getElementById("mytext").value;
+            window.opener.passValue(val); //透過opener來傳值
+            self.close();
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <input type="text" name="mytext" id="mytext">
+    <input type="button" value="透過子視窗取得資料登錄" onclick="passValue()">
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>隨意改變框架大小組合</title>
+    <script type="text/javascript">
+        function moreWidth() {
+            var frameSet=top.document.getElementById("left_right");
+            frameSet.cols="300,*";
+        }
+        function lessWidth() {
+                var frameSet = top.document.getElementById("left_right");
+                frameSet.cols = "100,*";
+            }
+    </script>
+</head>
+
+<body>
+    <h2>右邊frame</h2>
+    <input type="button" value="變寬" onclick="moreWidth()">
+    <input type="button" value="變窄" onclick="lessWidth()">
+</body>
+
+</html>

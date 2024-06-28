@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>獲得是誰開了一個新視窗</title>
+    <script type="text/javascript">
+        function getParentWin() {
+            //opener僅對子視窗有效 因為該屬性是參考window.open()的父視窗
+            //如果不是透過opener開啟子視窗則該屬性為undefined or null
+            alert(window.opener.document.body.innerHTML);
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <input type="button" value="父視窗的文件內容" onclick="getParentWin()">
+</body>
+
+</html>

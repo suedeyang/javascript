@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>建立動態框架</title>
+    <script type="text/javascript">
+        function createFrame() {
+           var myScript=document.createElement("iframe"); //建立iframe的DOM物件
+           myScript.src="050.html"; //指定iframe的SRC
+           document.body.appendChild(myScript); //掛載到body中
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <input type="button" value="建立動態框架" onclick="createFrame()">
+</body>
+
+</html>

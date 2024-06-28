@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>巧用self操作目前文件所在的框架或視窗</title>
+    <script type="text/javascript">
+        
+        
+        function flashIt() {
+            self.location.reload();
+            //可參考050.html 在單網頁來說 self與window是同一個含意 但如果把網頁放入框架裡呼叫window裡的函數可能獲得的並不是自己想要的結果
+            //此時就需要明確的self來進行本網頁內容的參考
+        }
+        //頁面載入時顯示目前的時間並不斷更新
+        window.onload = function () {
+            var myDiv = document.getElementById("myDiv");
+            myDiv.innerHTML = new Date();
+            //setInterval("flashIt()", 1000);    
+        }
+    </script>
+</head>
+    <body>
+        <h2>右邊frame</h2>
+        <div id="myDiv"></div>
+        <input type="button" value="更新本網頁" onclick="flashIt()"><br>
+
+
+    </body>
+
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>開啟一個新視窗</title>
+    <script type="text/javascript">
+        function openNewWin() {
+            var win=window.open("054_child.html");
+        }
+
+        function passValue(val) {
+                alert("輸入的值為:" + val);
+            }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <input type="button" value="開啟一個新視窗" onclick="openNewWin()">
+</body>
+
+</html>

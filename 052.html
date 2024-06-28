@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>開啟一個新的視窗</title>
+    <script type="text/javascript">
+        function openNewWin() {
+            var win=window.open("002.html", "newWin", "width=300,height=300,top=200,left=100,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no");
+            //javascript中的window.open()函數可用來開啟新視窗 可用的參數有如下
+            //window.open(url, name, specs, replace)
+            //url:要開啟的網址
+            //name:視窗名稱
+            //specs:視窗設定
+            //replace:是否覆蓋已存在的視窗  true:覆蓋  false:不覆蓋   一般都要覆蓋
+        }
+        
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <input type="button" value="開啟一個新視窗" onclick="openNewWin()">
+</body>
+
+</html>
