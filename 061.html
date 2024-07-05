@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>滑鼠進出時改變文字大小</title>
+    <script type="text/javascript">
+        //注意this的傳遞方式 this=event 到函數的pDom 接style的值
+        //在html tag中以onmouseover="mOver(this);" onmouseleave="mOut(this);" 來監聽滑鼠進出事件
+        function mOver(pDom) {
+            pDom.style.fontSize = "20px";
+        }
+        function mOut(pDom) {
+            pDom.style.fontSize = "";
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <p style="margin: 5px auto;width: 200px;height: 200px;background: gray;" onmouseover="mOver(this);" onmouseleave="mOut(this);">
+        place mouse over here
+    </p>
+</body>
+
+</html>

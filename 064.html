@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>滑鼠放上連結出現不同顏色</title>
+    <script type="text/javascript">
+        function defineLinkColor() {
+            var linkDoms=document.getElementsByTagName("a");
+            for(var i=0; i<linkDoms.length; i++){
+                linkDoms[i].style.color="red";
+            }
+        }   
+    </script>
+</head>
+
+<body onload="defineLinkColor();">
+   <p align="center">
+    <a href="#">連結1</a>
+    <a href="#">連結2</a>
+   </p>
+</body>
+
+</html>

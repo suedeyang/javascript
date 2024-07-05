@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>禁止按滑鼠右鍵</title>
+    <script type="text/javascript">
+        document.onmousedown = function (e) {  //onmousedown 代表滑鼠按下事件
+            if(e.button== 2){ // 2代表滑鼠右鍵
+                alert("禁止按滑鼠右鍵")
+            }
+        };
+        //
+        //注意e的傳遞方式 e=event
+        //1代表滑鼠左鍵 2代表滑鼠右鍵 
+        //
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <h2>禁止按滑鼠右鍵</h2>
+</body>
+
+</html>

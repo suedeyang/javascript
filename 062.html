@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>雙擊滑鼠捲頁面直到頁面底部</title>
+    <script type="text/javascript">
+        var nowPos;
+        var myTimer;
+        function startIt(){
+            myTimer=setInterval("scrollPage()",10);
+        }
+
+        function stopIt(){
+            clearInterval(myTimer);
+        }
+
+        function scrollPage(){
+            window.scrollBy(0,1);
+        }
+        document.onmousedown = stopIt; //監聽滑鼠按下事件 似乎不用迴圈可持續注意文件的滑鼠動態
+        document.ondblclick = startIt; //監聽滑鼠雙擊事件
+    </script>
+</head>
+
+<body>
+    <p align="center">雙擊開始捲頁 點擊停止捲頁</p>
+    <p>11</p>
+    <p>22</p>
+    <p>33</p>
+    <p>44</p>
+    <p>55</p>
+    <p>66</p>
+    <p>77</p>
+    <p>88</p>
+    <p>99</p>
+    <p>11</p>
+    <p>22</p>
+    <p>33</p>
+    <p>44</p>
+    <p>55</p>
+    <p>66</p>
+    <p>77</p>
+    <p>88</p>
+    <p>99</p>
+    <p align="center">底部</p>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>動態定義滑鼠的指標形狀</title>
+    <script type="text/javascript">
+
+        function initMouse() {
+            var pDom=document.getElementsByTagName("p")[0];
+            pDom.style.cursor = 'pointer';
+            //text auto move not-allow wait help crosshair
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="initMouse()">
+    <p style="margin: 5px auto;width: 200px;height: 200px;background: gray;">
+        滑鼠指標移至這裡
+    </p>
+
+</body>
+
+</html>

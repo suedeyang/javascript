@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>當按下滑鼠左鍵的時候出現廣告視窗</title>
+    <script type="text/javascript">
+        function defineClick() {
+            document.onmousedown = function () {
+                window.open("http://www.google.com","Google","fullscreen=1");
+            }
+        }
+    </script>
+</head>
+
+<body onload="defineClick();">
+    <p align="center">點按螢幕任何位置就可以開啟新視窗</p>
+</body>
+
+</html>
