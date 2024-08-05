@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>會變色的按紐</title>
+    <script type="text/javascript">
+        function init() {
+            var btn=document.getElementById("btn");
+            btn.onmouseover=function(){
+                this.style.backgroundColor="red";
+            }
+            btn.onmouseout=function(){
+                this.style.backgroundColor="";
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <input type="button" value="按鈕" id="btn">
+</body>
+
+</html>

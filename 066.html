@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>讓滑鼠滾輪故障</title>
+    <script type="text/javascript">
+        function init(){
+            document.onmousewheel = function(){ //在此重新定義onmousewheel事件
+                alert("禁止使用滾輪");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <p style="width: 5px;">你滑動滾輪試試看</p>
+</body>
+
+</html>

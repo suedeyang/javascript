@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>註冊按鈕倒數計時效果</title>
+    <script type="text/javascript">
+        var sec=10;
+        function init(){
+            timer=setInterval(function(){
+                var btn=document.getElementById("btn");
+                sec--;
+                btn.value = "註冊" + sec ;
+                if(sec==0){
+                    clearInterval(timer);
+                    btn.disabled=false;
+                    btn.value="註冊";
+                }
+        },1000)
+    }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()"> 
+    <p>請認真閱讀本協定...</p>
+    <input type="button" value="註冊(10)" id="btn" disabled="disabled">
+</body>
+
+</html>

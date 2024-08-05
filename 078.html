@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>閱讀完協定後才可以點擊的註冊按紐</title>
+    <script type="text/javascript">
+        function doscroll() {
+            var d=document.getElementById("xieyi");
+            var btn=document.getElementById("btn");
+            if(d.scrollTop + d.offsetHeight > 200){
+                btn.disabled = false;
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <div style="width: 200px;height: 150px;overflow-y: scroll;margin: 5px auto;border: 1px solid black;" onscroll="doscroll()" id="xieyi">
+        請認真閱讀本協定<br>
+        與人文(視覺)】代課教<br>
+        .<br>
+        .<br>
+        .<br>
+        .<br>
+        .<br>
+        .<br>
+        .<br>
+        .<br>
+        協定end
+    </div><br>
+    <input type="button" value="註冊" id="btn" disabled="disabled">
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

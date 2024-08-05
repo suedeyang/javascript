@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>自訂按鈕的click事件</title>
+    <script type="text/javascript">
+        function defineBtnClick() {//onclick在java程式中執行 寫成變數比較靈活 
+            var myBtn=document.getElementById("myBtn");
+            myBtn.onclick=function(){
+                alert("按鈕被點擊了");
+            }
+            myBtn.onmouseover=function(){
+                myBtn.style.backgroundColor="red";
+            }
+            myBtn.onmouseout=function(){
+                myBtn.style.backgroundColor="blue";
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="defineBtnClick();"> 
+    <input type="button" value="一個按鈕" id="myBtn">
+</body>
+
+</html>

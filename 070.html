@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>為使用者定義一個列印按鈕</title>
+    <script type="text/javascript">
+        function printDoc(e) {
+            alert(e.id + "列印按鈕被點擊了");
+            window.print();
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <form action="" method="post" style="display: block;width:200px;height:200px;border:1px solid black;">
+    <input type="button" value="列印按鈕" id="myPrintBtn" onclick="printDoc(this);">
+</body>
+
+</html>

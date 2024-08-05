@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>刪除按鈕必須的提醒功能</title>
+    <script type="text/javascript">
+        function deleteInfo() {
+            var confirmDel=false;
+            confirmDel=window.confirm("確定要刪除嗎?");
+            if(confirmDel){
+                alert("刪除成功");
+                document.getElementById("myBtn").disabled=true;
+                document.getElementsByTagName("h2")[0].innerHTML="已刪除";
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <h2>刪除一筆資訊</h2>
+    <input type="button" value="刪除" onclick="deleteInfo();" id="myBtn">
+</body>
+
+</html>
