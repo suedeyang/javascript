@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>需要確認的連結</title>
+    <script type="text/javascript">
+        function confirmOpen(link) {
+            if(confirm('你確定要開啟'+link+'嗎?')){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body style="text-align: center;">
+    
+    <a href="https://www.google.com.tw" onclick="return(confirmOpen(this.href))">開啟連結</a>
+</body>
+
+</html>

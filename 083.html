@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>用連結模擬一個按鈕</title>
+    <script type="text/javascript">
+        function defineLinkClick() {
+           var mylink =document.getElementById("mylink");
+           mylink.style.fontSize="16px";
+           mylink.style.textAlign="center";
+           mylink.style.color="white";
+           mylink.style.padding="4px 10px";
+           mylink.style.margin="3px";
+           mylink.style.background = "gray";
+           mylink.style.textDecoration="none";
+           mylink.style.borderColor="#eeeeee #717171 #717171 #eeeeee";
+           mylink.style.borderStyle="solid";
+           mylink.style.borderWidth="1px";
+           mylink.style.borderRadius="5px";
+           mylink.onclick=function () {
+               alert("連結被點擊了。");
+               //return false;
+           }
+        }
+
+    </script>
+
+</head>
+
+<body style="text-align: center;" onload="defineLinkClick();">
+  <a href="#" id="mylink">按鈕式連結</a>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>為連結位址多加一個參數</title>
+    <script type="text/javascript">
+        function showNewURL() {
+            var links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                var href=links[i].href;
+                if(href.indexOf("?") >0){
+                    links[i].href=href+"&param001=test";
+                }else{
+                    links[i].href=href+"?param001=test";
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body style="text-align: center;">
+    <a href="index.php">連結1</a>
+    <a href="index.php?page=1">連結1</a>
+    <input type="button" value="為連結位址多加一個參數" onclick="showNewURL();">
+</body>
+
+</html>

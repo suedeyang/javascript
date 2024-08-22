@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>關閉視窗的那個X連結</title>
+    <script type="text/javascript">
+        function defineLinkClick() {
+            var mylink =document.getElementById("mylink");
+            mylink.onclick=function () {
+                window.close();
+                //return false;
+            };
+        }
+
+    </script>
+
+</head>
+
+<body style="text-align: center;" onload="defineLinkClick();">
+    電擊&nbsp;<a href="#" id="mylink">X</a>&nbsp;關閉視窗
+    <!-- <a href="javascript:window.close();" id="mylink">也可以達到相同效果         
+         <a href="javascript:void(0);" id="mylink">也可以達到相同效果
+    -->
+</body>
+
+</html>
