@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>讓文字標籤只帶有底線</title>
+    <script type="text/javascript">
+        function changeTextStyle() {
+            var myText = document.getElementById("myText");
+            myText.style.borderColor = "black";
+            myText.style.borderStyle = "solid";
+            myText.style.borderWidth = "0 0 1px 0";
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="changeTextStyle()">
+    請輸入姓名：<input type="text" name="myText" id="myText" /><br><br>
+    <input type="button" value="按鈕" id="myBtn">
+
+</body>
+
+</html>

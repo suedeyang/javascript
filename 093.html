@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>用正規表示法驗證email格式</title>
+    <script type="text/javascript">
+        function validateInput(){
+            var myText = document.getElementById("myText");
+            var email = myText.value;
+            var emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if(emailReg.test(email)){
+                alert("驗證通過");
+            }else{
+                alert("驗證失敗");
+            }
+
+            //if(myText.value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+            //    alert("驗證通過");
+            //}else{
+            //    alert("驗證失敗");
+            //}
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" >
+    請輸入E-Mail：<input type="text" id="myText" /><br><br>
+    <input type="button" value="傳送檢驗" id="myBtn" onclick="validateInput()">
+</body>
+
+</html>
