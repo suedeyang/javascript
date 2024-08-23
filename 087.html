@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>讓頁面中所有的連結都故障無法按</title>
+    <script type="text/javascript">
+        function invaildLink() {
+            var mylink = document.getElementsByTagName("a");
+            for (var i = 0; i < mylink.length; i++) {
+                mylink[i].href = "javascript:void(0)";
+                mylink[i].onclick = "null";
+            }
+        }
+
+    </script>
+
+</head>
+
+<body style="text-align: center;">
+    <a href="#">連結1</a>
+    <a href="#">連結2</a>
+    <input type="button" value="故障" onclick="invaildLink();" id="mybtn">
+</body>
+
+</html>

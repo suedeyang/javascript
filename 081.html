@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>改變連結的點擊事件</title>
+    <script type="text/javascript">
+        //另一種寫法 不直接onclick 先onload再定義連結的click動作
+        function defineLinkClick() {
+            var mylink=document.getElementById("mylink");
+            mylink.onclick=function () {
+                alert("連結被點擊了。");
+                //return false;
+            }
+        }
+        
+    </script>
+   
+</head>
+
+<body style="text-align: center;" onload="defineLinkClick();">
+    <a href="#" id="mylink">連結1</a>
+</body>
+
+</html>

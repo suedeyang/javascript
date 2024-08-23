@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>動態修改一個連結位址</title>
+    <script type="text/javascript">
+        function modifyURL() {
+            var mylink = document.getElementById("mylink");
+            mylink.textContent = "Google";
+            mylink.href = "https://www.google.com.tw";
+        }
+
+    </script>
+
+</head>
+
+<body style="text-align: center;" onload="defineLinkClick();">
+    <a href="#" id="mylink">連結1</a><br>
+    <input type="button" value="修改連結" onclick="modifyURL();">
+</body>
+
+</html>
