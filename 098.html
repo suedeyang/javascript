@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>動態為下拉式功能表設定專案</title>
+    <script type="text/javascript">
+        function fillOptions() {
+            var mySel=document.getElementById("mySelect");
+            mySel.innerHTML='';
+            var str='';
+            for(var i=1;i<=12;i++){
+                str += "<option value="+ i +">"+ i +"月</option>";
+            }
+            mySel.innerHTML=str;
+        }
+
+    </script>
+</head>
+
+<body style="text-align: center;">
+    請選擇：<select id="mySelect"><br><br>
+    <input type="button" value="填充下拉選單" id="myBtn" onclick="fillOptions()">
+
+</body>
+
+</html>

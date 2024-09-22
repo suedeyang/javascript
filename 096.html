@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>判斷中文字的個數</title>
+    <script type="text/javascript">
+        function sumInput() {
+            var myText=document.getElementById("myText");
+            var val=myText.value;
+            var sum = 0;
+            for(var i=0;i<val.length;i++){
+                var c=val.charAt(i); //取得目前的字元
+                if(isChinese(c)){
+                    sum++ ;
+                }
+            }
+            alert(sum);
+        }
+        function isChinese(c){
+            var reg = /[\u4E00-\u9FA5]/; //是否為中文 Unicode的編碼
+            return reg.test(c);
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    請輸入：<input type="text" value="" id="myText"/><br><br>
+    <input type="button" value="判斷中文字的個數" id="myBtn" onclick="sumInput()">
+
+</body>
+
+</html>

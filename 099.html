@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>多層次的省市下拉選單功能表</title>
+    <script type="text/javascript">
+        var arr=new Array();
+        arr[arr.length]= [1,'北京市',null] ;
+        arr[arr.length]= [2,'四川省',null] ;
+        arr[arr.length]= [3,'廣東省',null] ;
+        arr[arr.length]= [4,'北京市',1] ;
+        arr[arr.length]= [5,'成都市',2] ;
+        arr[arr.length]= [6,'廣州市',3] ;
+        arr[arr.length]= [7,'深圳市',3] ;
+        
+        
+        
+        function fillOptions(type) {
+            //在html中就進行provice與city的分流處理
+            //先解決省份的下拉選單
+            if(type == 'province'){
+                var province = document.getElementById('province');
+                province.innerHTML = ''; //清除原有的選項
+                var proStr = '<option value=""></option>';//清除原有的選項
+                for(var i=0;i<arr.length;i++){
+                    var item = arr[i];
+                    if(item[2] == null){ //省級或直轄市 沒有下級單位 要注意arr的結構
+                        proStr += '<option value="' + item[0] + '">' + item[1] + '</option>'; //這裡的value很重要 會傳給city判斷省份的從屬依據
+                    }
+                }
+                province.innerHTML = proStr; //將省份的選項填入下拉選單
+            }else if(type == 'city'){
+                var currProId  = document.getElementById('province').value; //藉由option的value取得目前的省份ID 
+                //alert(currProId);
+                if(currProId == ''){
+                    return false;
+                }//過濾沒有選擇省份的情況
+                var city = document.getElementById('city');
+                city.innerHTML = '';
+                var cityStr = '<option value=""></option>';
+                for(var i=0;i<arr.length;i++){
+                    var item = arr[i];
+                    if(item[2] == currProId){
+                        cityStr += '<option value="' + item[0] + '">' + item[1] + '</option>';
+                    }
+                }
+                city.innerHTML = cityStr;
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="fillOptions('province');">
+    省：<select id="province" onchange="fillOptions('city')"></select><br><br>
+    市：<select id="city"></select><br><br>
+</body>
+
+</html>

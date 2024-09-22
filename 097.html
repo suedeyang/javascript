@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>成為焦點時清除文字標籤內容</title>
+    <script type="text/javascript">
+        function clearContent(mytext){ //注意那個mytext
+            mytext.value = "";
+        }
+
+    </script>
+</head>
+
+<body style="text-align: center;">
+    請輸入：<input type="text" value="" onfocus="clearContent(this)" /><br><br>
+    <input type="button" value="按鈕" id="myBtn" onclick="sumInput()">
+
+</body>
+
+</html>
