@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>輸入文字時文字標籤邊框閃爍</title>
+    <script type="text/javascript">
+        function init() {
+            var texts = document.getElementsByTagName("input");
+            for (var i = 0; i < texts.length; i++) {
+                var t = texts[i];
+                t.onfocus = function () {
+                    var e = this;
+                    timer =setInterval(function () {
+                        var c=e.style.borderColor;
+                        if(c == "yellow"){
+                            e.style.borderColor = "";
+                        }else{
+                            e.style.borderColor = "yellow";
+                        }
+                    }, 2000);
+                };
+                t.onblur = function () {
+                    this.style.borderColor = "";
+                    clearInterval(timer);
+                }       
+            }
+        }
+
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()">
+    <input type="text" />
+    <input type="text" />
+
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>使用者輸入完以後立刻進行格式驗證</title>
+    <script type="text/javascript">
+        //html中的onblur代表失去焦點 就是離開了輸入框就會執行
+        function validateTel(){ 
+            var meTel = document.getElementById("myTel");
+            var val = meTel.value;
+            if(!/^09\d{8}$/.test(val)){
+                alert("請輸入正確的手機號碼");
+                meTel.style.borderColor="red";
+            }else{
+                meTel.style.border="2px solid green";  
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    請輸入手機號碼：<input type="text" value="" id="myTel" onblur="validateTel()" /><br><br>
+    <input type="button" value="傳送驗證" id="myBtn">
+
+</body>
+
+</html>

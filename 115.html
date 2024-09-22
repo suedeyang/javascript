@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>動態的為表格中的儲存格文字增加樣式</title>
+    <script type="text/javascript">
+        function chCell() {
+            var tbl=document.getElementById("tbl");
+            var rows=tbl.rows;
+            var len = tbl.rows.length;
+            for(var i=0;i<len;i++){
+                var cells=rows[i].cells;
+                for(var j=0;j<cells.length;j++){
+                    cells[j].onclick=function(){
+                        if(this.style.color=="black" || this.style.color==""){
+                            this.style.color="red";
+                        }else{
+                            this.style.color="black";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" onload="chCell()">
+    <table id="tbl" align="center" border="1">
+        <tr>
+            <th>名字</th>
+            <th>年齡</th>
+        </tr>
+        <tr>
+            <td>小明</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>小美</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>小華</td>
+            <td>12</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

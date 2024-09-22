@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>滑鼠畫過文字標籤改變其背景色彩</title>
+    <script type="text/javascript">
+        function init() {
+            var texts = document.getElementsByTagName("input");
+            for(var i=0;i<texts.length;i++){
+                var t = texts[i];
+                t.onmouseover = function(){
+                    this.style.backgroundColor = "red";
+                }
+                t.onmouseout =function(){
+                    this.style.backgroundColor = "";
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body style="text-align: center;" onload="init()"> 
+   <input type="text" />
+   <input type="text" />
+
+
+</body>
+
+</html>

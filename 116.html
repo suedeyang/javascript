@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>動態加入一個新的表格行</title>
+    <script type="text/javascript">
+        function addRow() {
+            var tbl = document.getElementById("tbl");
+            //tbl.insertRow(tbl.rows.length).innerHTML = "<td>col1</td><td>col2</td>";
+            tbl.innerHTML += "<tr><td>col1</td><td>col2</td></tr>";
+            //怪了 那個</table>似乎沒關係
+        }
+    </script>
+</head>
+
+<body style="text-align: center;" >
+    <p>
+        <input type="button" value="加一行" onclick="addRow()" />
+    <table id="tbl" align="center" border="1">
+        <tr>
+            <td>col1</td>
+            <td>col2</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

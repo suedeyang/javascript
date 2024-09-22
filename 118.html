@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>複製表格</title>
+    <script type="text/javascript">
+        function copyTbl() {
+            var tbl = document.getElementById("tbl");
+            t = document.createElement("table");
+            t.align = tbl.align;
+            t.border = tbl.border;
+            t.innerHTML = tbl.innerHTML;
+            document.body.appendChild(t);
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <label>雙擊標頭複製一個相同的表格出來</label>
+    <table id="tbl" align="center" border="1">
+        <tr onclick="copyTbl();">
+            <th>名字</th>
+            <th>年齡</th>
+        </tr>
+        <tr>
+            <td>小明</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>小美</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>小華</td>
+            <td>12</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
