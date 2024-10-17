@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>  
+    <meta charset="utf-8">
+    <title>建立動態的XMLHttpRequest</title>
+    <script>
+        var client; //定義XMLHttpRequest物件 也稱作AJAX用戶端
+
+        function sendAjax() {
+            if(window.ActiveXObject){//判斷是否為老IE的瀏覽器 IE需要以ActiveX方式建立
+                client = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            else if(window.XMLHttpRequest){
+                client = new XMLHttpRequest();
+            }else{
+                alert("您的瀏覽器不支援AJAX!");
+            }
+            if(client){
+                client.open("GET","test001.txt",true);//設定建立連結的方式和目的檔案 以及是否為同步模式
+                client.send(); //發出AJAX請求
+                alert('ajax請求已經發出');
+            }
+        }
+    </script>
+</head>
+<body style="text-align: center;">
+    <input type="button" value="Send" onclick="sendAjax()">
+</body>
+</html>
