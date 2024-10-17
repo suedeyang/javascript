@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>把陣列裡的元素按照自然排序</title>
+    <script type="text/javascript">
+       var arr = new Array();
+       for(var i=0; i<10 ; i++) {
+           arr[i] = Math.floor(Math.random()*100); //產生0-99的亂數
+       }
+       alert('原始順序：'+printArr(arr));
+
+       arr.sort();
+       alert('排序後：'+printArr(arr));
+       
+
+
+
+       function printArr(arr) {
+        var str='';
+        for(var prop in arr) {
+            str +=arr[prop]+',';
+        }        
+        return str;
+       }
+
+    </script>
+</head>
+
+<body style="text-align: center;">
+   
+</body>

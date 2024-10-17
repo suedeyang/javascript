@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>陣列尾端加入或移除元素</title>
+    <script type="text/javascript">
+        var arr = new Array(5);
+        for(var i=0; i<arr.length; i++) {
+            arr[i] = i+1;
+        }
+        function addOne() {
+            var e=document.getElementById("elm").value;
+            arr.push(e);
+            document.getElementById("elm").value="";
+        }
+
+        function deleteOne() {
+            arr.pop();
+        }
+
+        function printArrr() {
+            var str='';
+            //str=arr.join(",");
+            //alert(str);
+            for(var i=0; i<arr.length; i++) {
+                str+=arr[i]+',';
+            }
+            alert('arr的內容為：'+str);
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    增加的值：<input type="text" name="elm" id="elm">
+    <input type="button" value="增加" onclick="addOne()">
+    <input type="button" value="刪除" onclick="deleteOne()">
+    <input type ="button" value="列印" onclick="printArrr()">
+</body>

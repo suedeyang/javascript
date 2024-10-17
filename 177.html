@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">  
+    <title>3種建立自訂物件的方式</title>
+    <script type="text/javascript">
+    var obj001={};
+    obj001.pro1=100;
+    obj001.pro2=function(){
+        alert("我是方法001的pro2");
+    };
+    obj001.pro2();
+    //使用function建立自訂物件
+    function createObj002(){
+        this.pro1=200;
+        this.pro2=function(){
+            alert("我是方法002的pro2");
+        };
+    };
+
+    var obj002=new createObj002();
+    obj002.pro2();
+
+    //使用new object()建立自訂物件
+    var obj003=new Object();
+    obj003.pro1=300;
+    obj003.pro2=function(){
+        alert("我是方法003的pro2");
+    };
+
+    obj003.pro2();
+    </script>
+</head>
+
+<body style="text-align: center;">
+
+</body>
