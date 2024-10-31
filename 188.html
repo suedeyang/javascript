@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>為Ajax請求加上參數</title>
+    <script>
+        var client; //定義XMLHttpRequest物件 也稱作AJAX用戶端
+        function sendAjax() {
+            if (window.ActiveXObject) {//判斷是否為老IE的瀏覽器 IE需要以ActiveX方式建立
+                client = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            else if (window.XMLHttpRequest) {
+                client = new XMLHttpRequest();
+            } else {
+                alert("您的瀏覽器不支援AJAX!");
+            }
+            if (client) {
+                var method = document.getElementById("the_method").value;
+                var params = document.getElementById("params").value;
+                if(method == "POST") {
+                    client.open(method,"text001.txt",true);//設定建立連結的方式和目的檔案 以及是否為同步模式
+                    client.send();
+                    //client.send(params); //呼叫send()函數 將params傳給server
+                }else if(method == "GET") {
+                    //用GET方式發出請求 參數放在URL後面 受到URL長度的限制
+                    client.open(method,"text001.txt?" + params,true);
+                    client.send();
+                }
+                client.onreadystatechange = myCallback;
+            }
+        }
+
+        function myCallback() {
+            alert(client.readyState); //如果請求的response正常傳回 並且http狀態為200 表示伺服器端已成功回傳資訊 如果404表示伺服器端沒有這個檔案 如果500表示伺服器端有錯誤
+            if (client.readyState == 4 && client.status == 200) {
+                alert("ajax請求的結果是："+ client.responseText);
+            }
+        }
+    </script>
+
+
+</head>
+
+<body style="text-align: center;">
+    <label>請求方法：</label>
+    <select id="the_method">
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+    </select>
+    <br/>
+    <label>請求內容:</label>
+    <input type="text" id="params" name="params">
+    <br/>
+    <input type="button" value="Send" onclick="sendAjax()">
+    <br>
+</body>
+
+</html>

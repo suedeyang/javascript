@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>自訂Ajax請求方法</title>
+    <script>
+        var client; //定義XMLHttpRequest物件 也稱作AJAX用戶端
+
+        function sendAjax() {
+            if (window.ActiveXObject) {//判斷是否為老IE的瀏覽器 IE需要以ActiveX方式建立
+                client = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            else if (window.XMLHttpRequest) {
+                client = new XMLHttpRequest();
+            } else {
+                alert("您的瀏覽器不支援AJAX!");
+            }
+            if (client) {
+                var method = document.getElementById("the_method").value;
+                client.open(method,"test001.txt",true);//設定建立連結的方式和目的檔案 以及是否為同步模式
+                client.send(); //發出AJAX請求
+                alert('ajax請求已經發出，方法為：'+method);
+                client.onreadystatechange = myCallback;
+            }
+        }
+
+        function myCallback() {
+            //檢查xmlhttprequest狀態值 這個readystate是狀態值會隨著請求的狀態改變而改變
+            //如果狀態值為4，表示請求已經完成且回應已就緒
+            //如果狀態值為0 ，表示請求還沒開始
+            //如果狀態值為1表示請求已經開始
+            //如果狀態值為2表示請求已經發出
+            //如果狀態值為3表示請求已經處理中
+            //如果狀態值為4表示請求已經完成
+            alert(client.readyState); //如果請求的response正常傳回 並且http狀態為200 表示伺服器端已成功回傳資訊 如果404表示伺服器端沒有這個檔案 如果500表示伺服器端有錯誤
+            if (client.readyState == 4 && client.status == 200) {
+                alert(client.responseText);
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <input type="text" name="the_method" id="the_method" />
+    <input type="button" value="Send" onclick="sendAjax()">
+</body>
+
+</html>
